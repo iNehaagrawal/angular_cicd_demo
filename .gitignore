@@ -3,6 +3,5 @@ dist
 .angular
 coverage
 .git
-.github
 .vscode
 npm-debug.log
