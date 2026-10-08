@@ -1,0 +1,30 @@
+<section class="page">
+  <p class="eyebrow">Where the static files go</p>
+  <h1>Angular production is a folder of files.</h1>
+  <p class="lede">
+    <code>ng build</code> writes HTML, CSS, and JavaScript. Any static host can serve them.
+    The host must return <code>index.html</code> when the path is an Angular route.
+  </p>
+
+  <div class="host-list">
+    @for (host of hosts; track host.name) {
+      <article>
+        <header>
+          <h2>{{ host.name }}</h2>
+          <span>{{ host.fit }}</span>
+        </header>
+        <p>{{ host.note }}</p>
+      </article>
+    }
+  </div>
+
+  <article class="card">
+    <h2>Private repository, public website</h2>
+    <p>
+      GitHub Actions can test a private repo on the free plan. GitHub Pages on that same free
+      plan publishes only a public repository. Cloudflare Pages, Netlify, Vercel, Firebase
+      Hosting, and Azure Static Web Apps can build a private repo. The website URL is still
+      public. That is the normal split: private source, public frontend.
+    </p>
+  </article>
+</section>

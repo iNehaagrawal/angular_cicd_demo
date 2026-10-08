@@ -1,0 +1,36 @@
+<section class="page">
+  <p class="eyebrow">Continuous integration and delivery</p>
+  <h1>One push, then a checked production build.</h1>
+  <p class="lede">
+    CI proves the Angular app still builds and tests pass. CD publishes that same build.
+    This demo never deploys <code>ng serve</code>.
+  </p>
+
+  <div class="status" [class.live]="production">
+    <span>{{ production ? 'Production build' : 'Development server' }}</span>
+    <code>{{ apiUrl }}</code>
+  </div>
+
+  <ol class="stages">
+    @for (stage of stages; track stage.name) {
+      <li>
+        <strong>{{ stage.name }}</strong>
+        <p>{{ stage.detail }}</p>
+      </li>
+    }
+  </ol>
+
+  <article class="card">
+    <h2>What to say in the interview</h2>
+    <p>
+      “A pull request installs dependencies with npm ci, runs unit tests in a headless browser,
+      and produces a production build. Merging to main uploads that artifact to GitHub Pages.
+      The Angular router uses path URLs, so the host must fall back to index.html.
+      Secrets stay in the CI secret store. I roll back by redeploying the previous artifact.”
+    </p>
+    <p class="links">
+      <a routerLink="/hosts">Free hosts</a>
+      <a routerLink="/docker">Docker path</a>
+    </p>
+  </article>
+</section>

@@ -1,0 +1,19 @@
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" routerLink="/">
+      <span class="mark">CI</span>
+      <span>
+        <strong>Angular CI/CD</strong>
+        <small>Free pipeline practice</small>
+      </span>
+    </a>
+    <nav>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Pipeline</a>
+      <a routerLink="/hosts" routerLinkActive="active">Hosts</a>
+      <a routerLink="/docker" routerLinkActive="active">Docker</a>
+    </nav>
+  </header>
+  <main>
+    <router-outlet />
+  </main>
+</div>

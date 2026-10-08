@@ -1,0 +1,34 @@
+<section class="page">
+  <p class="eyebrow">Same build, different host</p>
+  <h1>nginx serves the files. Node does not stay in the image.</h1>
+  <p class="lede">
+    The first Docker stage compiles Angular. The second stage copies only
+    <code>dist/angular-cicd-demo/browser</code> into nginx. A refresh works because nginx
+    tries the file, then falls back to <code>index.html</code>.
+  </p>
+
+  <ol class="stages">
+    <li>
+      <strong>Build image</strong>
+      <p><code>docker build -t angular-cicd-demo:local .</code></p>
+    </li>
+    <li>
+      <strong>Run it</strong>
+      <p><code>docker run --rm -p 8080:80 angular-cicd-demo:local</code></p>
+    </li>
+    <li>
+      <strong>Prove the router</strong>
+      <p>Open <code>http://localhost:8080/docker</code> and refresh the page.</p>
+    </li>
+  </ol>
+
+  <article class="card">
+    <h2>What to say in the interview</h2>
+    <p>
+      “I use a multi-stage image so production does not contain the Angular compiler or
+      node_modules. nginx is the process that stays running. I tag the image with the commit
+      SHA, not only latest, so a rollback is a redeploy of a known tag. GitHub Pages is the
+      free public URL for this demo. Docker Desktop is the free way to practice the container.”
+    </p>
+  </article>
+</section>
