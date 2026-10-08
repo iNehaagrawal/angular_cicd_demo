@@ -35,7 +35,7 @@ jobs:
         run: npm run test:ci
 
       - name: Production build for GitHub Pages
-        run: npx ng build --base-href /angular-cicd-demo/
+        run: npx ng build --base-href /angular_cicd_demo/
 
       - name: Keep Angular routes working on refresh
         run: |
